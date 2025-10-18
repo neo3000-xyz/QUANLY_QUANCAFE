@@ -34,5 +34,14 @@ namespace QUANLY_QUANCAFE
                 e.Cancel = true;
             }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            fTableManager f = new fTableManager();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
+        }
     }
 }
