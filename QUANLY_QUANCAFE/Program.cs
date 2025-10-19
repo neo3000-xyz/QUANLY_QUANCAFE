@@ -16,8 +16,8 @@ namespace QUANLY_QUANCAFE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new fLogin());
-            Application.Run(new fAdmin());
+            Application.Run(new fLogin());
+            //Application.Run(new fAdmin());
         }
     }
 }
