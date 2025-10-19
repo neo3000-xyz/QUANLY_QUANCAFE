@@ -50,5 +50,15 @@ namespace QUANLY_QUANCAFE
         {
 
         }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
