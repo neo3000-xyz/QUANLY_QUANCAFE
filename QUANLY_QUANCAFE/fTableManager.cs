@@ -32,6 +32,10 @@ namespace QUANLY_QUANCAFE
         {
             fAdmin f = new fAdmin();
             f.ShowDialog();
+
         }
     }
 }
+
+
+
