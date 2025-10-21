@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,17 +12,21 @@ namespace QUANLY_QUANCAFE.DAO
     {
         private string connectionSTR = @"Data Source=NEO3000;Initial Catalog=QuanLyCafe;User ID=sa;Password=123456;Encrypt=True;TrustServerCertificate=True";
 
-        public void ExcecuteQuery(string query)
+        public DataTable ExcecuteQuery(string query)
         {
-            //SqlConnection connection = new SqlConnection(connectionSTR);
-            //string query = "Select DisplayName as [Tên hiển thị] from dbo.Account";
-            //connection.Open();
-            //SqlConnection command = new SqlCommand(query, connection);
-            //Datatable data = new DataTable();
-            //SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //adapter.Fill(data);
-            //connection.Close();
-            //return data;
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+
+
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                connection.Close();
+            }
+            return data;
         }
     }
 

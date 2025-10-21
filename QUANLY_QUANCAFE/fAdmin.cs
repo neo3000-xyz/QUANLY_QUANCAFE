@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Microsoft.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QUANLY_QUANCAFE.DAO;
 
 namespace QUANLY_QUANCAFE
 {
@@ -15,6 +17,15 @@ namespace QUANLY_QUANCAFE
         public fAdmin()
         {
             InitializeComponent();
+            LoadAccountList();
+        }
+
+        void LoadAccountList()
+        {
+            string query = "Select DisplayName as [Tên hiển thị] from dbo.Account";
+            DataProvider provider = new DataProvider();
+            dtgvAccount.DataSource = provider.ExcecuteQuery(query);
+
         }
 
         private void fAdmin_Load(object sender, EventArgs e)
@@ -62,6 +73,11 @@ namespace QUANLY_QUANCAFE
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

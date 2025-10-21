@@ -34,6 +34,16 @@ namespace QUANLY_QUANCAFE
             f.ShowDialog();
 
         }
+
+        private void fTableManager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
