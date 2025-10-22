@@ -24,12 +24,19 @@ namespace QUANLY_QUANCAFE.DAO
                 instance = value;
             }
         }
+        public static int TableWidth = 130;
+        public static int TableHeight = 130;
         private TableDAO() { }
 
         public List<Table> LoadTableList()
         {
             List<Table> tableList = new List<Table>();
             DataTable data = DataProvider.Instance.ExcecuteQuery("USP_GetTableList");
+            foreach (DataRow item in data.Rows)
+            {
+                Table table = new Table(item);
+                tableList.Add(table);
+            }
             return tableList;
         }
     }
