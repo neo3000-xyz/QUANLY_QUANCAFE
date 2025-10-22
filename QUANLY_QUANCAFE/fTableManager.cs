@@ -15,8 +15,16 @@ namespace QUANLY_QUANCAFE
         public fTableManager()
         {
             InitializeComponent();
+            LoadTable();
         }
 
+        #region Method
+        void LoadTable()
+        {
+        }
+        #endregion
+
+        #region Events
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,7 +42,7 @@ namespace QUANLY_QUANCAFE
             f.ShowDialog();
 
         }
-
+        #endregion
         private void fTableManager_Load(object sender, EventArgs e)
         {
 

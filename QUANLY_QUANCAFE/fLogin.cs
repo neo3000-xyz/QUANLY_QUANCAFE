@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLY_QUANCAFE.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +56,7 @@ namespace QUANLY_QUANCAFE
         }
         bool Login(string userName, string passWord)
         {
-            return false;
+            return AccountDAO.Instance.Login(userName, passWord);
         }
     }
 }
