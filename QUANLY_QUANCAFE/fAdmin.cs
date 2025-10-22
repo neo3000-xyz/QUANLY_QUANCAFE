@@ -17,16 +17,10 @@ namespace QUANLY_QUANCAFE
         public fAdmin()
         {
             InitializeComponent();
-            LoadAccountList();
-        }
-
-        void LoadAccountList()
-        {
-            string query = "Select DisplayName as [Tên hiển thị] from dbo.Account";
-            DataProvider provider = new DataProvider();
-            dtgvAccount.DataSource = provider.ExcecuteQuery(query);
 
         }
+
+
 
         private void fAdmin_Load(object sender, EventArgs e)
         {

@@ -37,11 +37,25 @@ namespace QUANLY_QUANCAFE
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = txtLogin.Text;
+            string passWord = txtPassword.Text;
 
+            if (Login(userName, passWord))
+            {
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
+        }
+        bool Login(string userName, string passWord)
+        {
+            return false;
         }
     }
 }
